@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://rarfile.readthedocs.io/en/latest/api.html#module-rarfile -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rarfile API documentation — RarFile 3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="./rarfile API documentation — RarFile 3.0 documentation_files/sphinx_rtd_theme.css" type="text/css">
+  
+
+  
+        <link rel="index" title="Index" href="https://rarfile.readthedocs.io/en/latest/genindex.html">
+        <link rel="search" title="Search" href="https://rarfile.readthedocs.io/en/latest/search.html">
+    <link rel="top" title="RarFile 3.0 documentation" href="https://rarfile.readthedocs.io/en/latest/index.html">
+        <link rel="next" title="rarfile FAQ" href="https://rarfile.readthedocs.io/en/latest/faq.html">
+        <link rel="prev" title="rarfile - RAR archive reader for Python" href="https://rarfile.readthedocs.io/en/latest/index.html"> 
+
+  
+  <script type="text/javascript" async="" src="./rarfile API documentation — RarFile 3.0 documentation_files/ga.js"></script><script src="./rarfile API documentation — RarFile 3.0 documentation_files/modernizr.min.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://rarfile.readthedocs.io/en/latest/api.html">
+
+<link rel="stylesheet" href="./rarfile API documentation — RarFile 3.0 documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'api' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/readthedocs-dynamic-include.js"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document" style="">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://rarfile.readthedocs.io/en/latest/index.html" class="icon icon-home"> RarFile
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://rarfile.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#"><span class="toctree-expand"></span>Module Documentation</a><ul>
+<li class="toctree-l2 current"><a class="reference internal current" href="https://rarfile.readthedocs.io/en/latest/api.html#module-rarfile">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile-class">RarFile class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarinfo-class">RarInfo class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarextfile-class">RarExtFile class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#module-configuration">Module Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/faq.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/news.html">Release News</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div id="rtd-my1iomjs" class="ethical-rtd ethical-dark-theme"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/750/grA6ICR8wmf8/" rel="nofollow" target="_blank" class="ethical-image-link"><img src="./rarfile API documentation — RarFile 3.0 documentation_files/python.png"></a><div class="ethical-text">Take the <a href="https://readthedocs.org/sustainability/click/750/grA6ICR8wmf8/" rel="nofollow" target="_blank">Python User's Survey</a> and let us know more about your usage of Python.</div></div><div class="ethical-callout"><small><em><a href="https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html#community-ads">Community Ad</a></em></small></div></div><img src="./rarfile API documentation — RarFile 3.0 documentation_files/saved_resource" style="display: none;"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://rarfile.readthedocs.io/en/latest/index.html">RarFile</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://rarfile.readthedocs.io/en/latest/index.html">Docs</a> »</li>
+        
+      <li>rarfile API documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/markokr/rarfile/blob/master/doc/api.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rarfile-api-documentation">
+<h1><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id1">rarfile API documentation</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile-api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile-api-documentation" id="id1">rarfile API documentation</a><ul>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#module-rarfile" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile-class" id="id3">RarFile class</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarinfo-class" id="id4">RarInfo class</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarextfile-class" id="id5">RarExtFile class</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#functions" id="id6">Functions</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#module-configuration" id="id7">Module Configuration</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#constants" id="id8">Constants</a></li>
+<li><a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#exceptions" id="id9">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="module-rarfile">
+<span id="introduction"></span><h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id2">Introduction</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#module-rarfile" title="Permalink to this headline">¶</a></h2>
+<p>RAR archive reader.</p>
+<p>This is Python module for Rar archive reading.  The interface
+is made as <a class="reference external" href="https://docs.python.org/3/library/zipfile.html#module-zipfile" title="(in Python v3.6)"><code class="xref py py-mod docutils literal"><span class="pre">zipfile</span></code></a>-like as possible.</p>
+<dl class="docutils">
+<dt>Basic logic:</dt>
+<dd><ul class="first last simple">
+<li>Parse archive structure with Python.</li>
+<li>Extract non-compressed files with Python</li>
+<li>Extract compressed files with unrar.</li>
+<li>Optionally write compressed data to temp file to speed up unrar,
+otherwise it needs to scan whole archive on each execution.</li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rarfile</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">rarfile</span><span class="o">.</span><span class="n">RarFile</span><span class="p">(</span><span class="s1">'myarchive.rar'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">rf</span><span class="o">.</span><span class="n">infolist</span><span class="p">():</span>
+    <span class="nb">print</span> <span class="n">f</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">file_size</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="s1">'README'</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Archive files can also be accessed via file-like object returned
+by <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.open" title="rarfile.RarFile.open"><code class="xref py py-meth docutils literal"><span class="pre">RarFile.open()</span></code></a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rarfile</span>
+
+<span class="k">with</span> <span class="n">rarfile</span><span class="o">.</span><span class="n">RarFile</span><span class="p">(</span><span class="s1">'archive.rar'</span><span class="p">)</span> <span class="k">as</span> <span class="n">rf</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">rf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'README'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>There are few module-level parameters to tune behaviour,
+here they are with defaults, and reason to change it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rarfile</span>
+
+<span class="c1"># Set to full path of unrar.exe if it is not in PATH</span>
+<span class="n">rarfile</span><span class="o">.</span><span class="n">UNRAR_TOOL</span> <span class="o">=</span> <span class="s2">"unrar"</span>
+
+<span class="c1"># Set to '\\' to be more compatible with old rarfile</span>
+<span class="n">rarfile</span><span class="o">.</span><span class="n">PATH_SEP</span> <span class="o">=</span> <span class="s1">'/'</span>
+</pre></div>
+</div>
+<p>For more details, refer to source.</p>
+</div>
+<div class="section" id="rarfile-class">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id3">RarFile class</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rarfile.RarFile">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarFile</code><span class="sig-paren">(</span><em>rarfile</em>, <em>mode='r'</em>, <em>charset=None</em>, <em>info_callback=None</em>, <em>crc_check=True</em>, <em>errors='stop'</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>Parse RAR structure, provide access to files in archive.</p>
+<p>Open and parse a RAR archive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>rarfile</strong> – archive file name</li>
+<li><strong>mode</strong> – only ‘r’ is supported.</li>
+<li><strong>charset</strong> – fallback charset to use, if filenames are not already Unicode-enabled.</li>
+<li><strong>info_callback</strong> – debug callback, gets to see all archive entries.</li>
+<li><strong>crc_check</strong> – set to False to disable CRC checks</li>
+<li><strong>errors</strong> – Either “stop” to quietly stop parsing on errors,
+or “strict” to raise errors.  Default is “stop”.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="rarfile.RarFile.comment">
+<code class="descname">comment</code><em class="property"> = None</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Archive comment.  Unicode string or None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.setpassword">
+<code class="descname">setpassword</code><span class="sig-paren">(</span><em>password</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.setpassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the password to use when extracting.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.needs_password">
+<code class="descname">needs_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.needs_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if any archive entries require password for extraction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.namelist">
+<code class="descname">namelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.namelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of filenames in archive.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.infolist">
+<code class="descname">infolist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.infolist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return RarInfo objects for all files/directories in archive.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.volumelist">
+<code class="descname">volumelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.volumelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns filenames of archive volumes.</p>
+<p>In case of single-volume archive, the list contains
+just the name of main archive file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.getinfo">
+<code class="descname">getinfo</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.getinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return RarInfo for file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>fname</em>, <em>mode='r'</em>, <em>psw=None</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns file-like object (<a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile" title="rarfile.RarExtFile"><code class="xref py py-class docutils literal"><span class="pre">RarExtFile</span></code></a>) from where the data can be read.</p>
+<p>The object implements <a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">io.RawIOBase</span></code></a> interface, so it can
+be further wrapped with <a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedReader" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">io.BufferedReader</span></code></a>
+and <a class="reference external" href="https://docs.python.org/3/library/io.html#io.TextIOWrapper" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">io.TextIOWrapper</span></code></a>.</p>
+<p>On older Python where io module is not available, it implements
+only .read(), .seek(), .tell() and .close() methods.</p>
+<p>The object is seekable, although the seeking is fast only on
+uncompressed files, on compressed files the seeking is implemented
+by reading ahead and/or restarting the decompression.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fname</strong> – file name or RarInfo instance.</li>
+<li><strong>mode</strong> – must be ‘r’</li>
+<li><strong>psw</strong> – password to use for extracting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>fname</em>, <em>psw=None</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return uncompressed data for archive entry.</p>
+<p>For longer files using <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.open" title="rarfile.RarFile.open"><code class="xref py py-meth docutils literal"><span class="pre">RarFile.open()</span></code></a> may be better idea.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fname</strong> – filename or RarInfo instance</li>
+<li><strong>psw</strong> – password to use for extracting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release open resources.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.printdir">
+<code class="descname">printdir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.printdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print archive file list to stdout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.extract">
+<code class="descname">extract</code><span class="sig-paren">(</span><em>member</em>, <em>path=None</em>, <em>pwd=None</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract single file into current directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>member</strong> – filename or <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo" title="rarfile.RarInfo"><code class="xref py py-class docutils literal"><span class="pre">RarInfo</span></code></a> instance</li>
+<li><strong>path</strong> – optional destination path</li>
+<li><strong>pwd</strong> – optional password to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.extractall">
+<code class="descname">extractall</code><span class="sig-paren">(</span><em>path=None</em>, <em>members=None</em>, <em>pwd=None</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.extractall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all files into current directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> – optional destination path</li>
+<li><strong>members</strong> – optional filename or <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo" title="rarfile.RarInfo"><code class="xref py py-class docutils literal"><span class="pre">RarInfo</span></code></a> instance list to extract</li>
+<li><strong>pwd</strong> – optional password to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.testrar">
+<code class="descname">testrar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.testrar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Let ‘unrar’ test the archive.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarFile.strerror">
+<code class="descname">strerror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.strerror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return error string if parsing failed or None if no problems.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="rarinfo-class">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id4">RarInfo class</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarinfo-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rarfile.RarInfo">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarInfo</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>An entry in rar archive.</p>
+<p>RAR3 extended timestamps are <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> objects without timezone.
+RAR5 extended timestamps are <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> objects with UTC timezone.</p>
+<dl class="attribute">
+<dt id="rarfile.RarInfo.filename">
+<code class="descname">filename</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>File name with relative path.
+Path separator is ‘/’.  Always unicode string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.date_time">
+<code class="descname">date_time</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.date_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>File modification timestamp.   As tuple of (year, month, day, hour, minute, second).
+RAR5 allows archives where it is missing, it’s None then.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.file_size">
+<code class="descname">file_size</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.file_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uncompressed size.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.compress_size">
+<code class="descname">compress_size</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.compress_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compressed size.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.compress_type">
+<code class="descname">compress_type</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.compress_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression method: one of <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M0" title="rarfile.RAR_M0"><code class="xref py py-data docutils literal"><span class="pre">RAR_M0</span></code></a> .. <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M5" title="rarfile.RAR_M5"><code class="xref py py-data docutils literal"><span class="pre">RAR_M5</span></code></a> constants.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.extract_version">
+<code class="descname">extract_version</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.extract_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimal Rar version needed for decompressing.  As (major*10 + minor),
+so 2.9 is 29.</p>
+<p>RAR3: 10, 20, 29</p>
+<p>RAR5 does not have such field in archive, it’s simply set to 50.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.host_os">
+<code class="descname">host_os</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.host_os" title="Permalink to this definition">¶</a></dt>
+<dd><p>Host OS type, one of RAR_OS_* constants.</p>
+<p>RAR3: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_WIN32" title="rarfile.RAR_OS_WIN32"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_WIN32</span></code></a>, <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_UNIX" title="rarfile.RAR_OS_UNIX"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_UNIX</span></code></a>, <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_MSDOS" title="rarfile.RAR_OS_MSDOS"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_MSDOS</span></code></a>,
+<a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_OS2" title="rarfile.RAR_OS_OS2"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_OS2</span></code></a>, <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_BEOS" title="rarfile.RAR_OS_BEOS"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_BEOS</span></code></a>.</p>
+<p>RAR5: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_WIN32" title="rarfile.RAR_OS_WIN32"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_WIN32</span></code></a>, <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_UNIX" title="rarfile.RAR_OS_UNIX"><code class="xref py py-data docutils literal"><span class="pre">RAR_OS_UNIX</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.mode">
+<code class="descname">mode</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>File attributes. May be either dos-style or unix-style, depending on host_os.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.mtime">
+<code class="descname">mtime</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.mtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>File modification time.  Same value as <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.date_time" title="rarfile.RarInfo.date_time"><code class="xref py py-attr docutils literal"><span class="pre">date_time</span></code></a>
+but as <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> object with extended precision.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.ctime">
+<code class="descname">ctime</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.ctime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional time field: creation time.  As <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.atime">
+<code class="descname">atime</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.atime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional time field: last access time.  As <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.arctime">
+<code class="descname">arctime</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.arctime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional time field: archival time.  As <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a> object.
+(RAR3-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.CRC">
+<code class="descname">CRC</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.CRC" title="Permalink to this definition">¶</a></dt>
+<dd><p>CRC-32 of uncompressed file, unsigned int.</p>
+<p>RAR5: may be None.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.blake2sp_hash">
+<code class="descname">blake2sp_hash</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.blake2sp_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blake2SP hash over decompressed data.  (RAR5-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.comment">
+<code class="descname">comment</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional file comment field.  Unicode string.  (RAR3-only)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.file_redir">
+<code class="descname">file_redir</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.file_redir" title="Permalink to this definition">¶</a></dt>
+<dd><p>If not None, file is link of some sort.  Contains tuple of (type, flags, target).
+(RAR5-only)</p>
+<p>Type is one of constants:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_UNIX_SYMLINK</span></code></dt>
+<dd>unix symlink to target.</dd>
+<dt><code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_WINDOWS_SYMLINK</span></code></dt>
+<dd>windows symlink to target.</dd>
+<dt><code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_WINDOWS_JUNCTION</span></code></dt>
+<dd>windows junction.</dd>
+<dt><code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_HARD_LINK</span></code></dt>
+<dd>hard link to target.</dd>
+<dt><code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_FILE_COPY</span></code></dt>
+<dd>current file is copy of another archive entry.</dd>
+</dl>
+</div></blockquote>
+<p>Flags may contain <code class="xref py py-data docutils literal"><span class="pre">RAR5_XREDIR_ISDIR</span></code> bit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.volume">
+<code class="descname">volume</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume nr, starting from 0.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarInfo.volume_file">
+<code class="descname">volume_file</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.volume_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume file name, where file starts.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarInfo.isdir">
+<code class="descname">isdir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.isdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if entry is a directory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarInfo.needs_password">
+<code class="descname">needs_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarInfo.needs_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if data is stored password-protected.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="rarextfile-class">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id5">RarExtFile class</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarextfile-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rarfile.RarExtFile">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarExtFile</code><span class="sig-paren">(</span><em>parser</em>, <em>inf</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">io.RawIOBase</span></code></a></p>
+<p>Base class for file-like object that <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFile.open" title="rarfile.RarFile.open"><code class="xref py py-meth docutils literal"><span class="pre">RarFile.open()</span></code></a> returns.</p>
+<p>Provides public methods and common crc checking.</p>
+<dl class="docutils">
+<dt>Behaviour:</dt>
+<dd><ul class="first last simple">
+<li>no short reads - .read() and .readinfo() read as much as requested.</li>
+<li>no internal buffer, use io.BufferedReader for that.</li>
+</ul>
+</dd>
+</dl>
+<p>Open archive entry.</p>
+<dl class="attribute">
+<dt id="rarfile.RarExtFile.name">
+<code class="descname">name</code><em class="property"> = None</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filename of the archive entry</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>cnt=None</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all or specified amount of data from archive entry.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close open resources.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.readinto">
+<code class="descname">readinto</code><span class="sig-paren">(</span><em>buf</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zero-copy read directly into buffer.</p>
+<p>Returns bytes read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.tell">
+<code class="descname">tell</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.tell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current reading position in uncompressed data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>ofs</em>, <em>whence=0</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seek in data.</p>
+<p>On uncompressed files, the seeking works by actual
+seeks so it’s fast.  On compresses files its slow
+- forward seeking happends by reading ahead,
+backwards by re-opening and decompressing from the start.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.readable">
+<code class="descname">readable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.readable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.writable">
+<code class="descname">writable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns False.</p>
+<p>Writing is not supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.seekable">
+<code class="descname">seekable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.seekable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True.</p>
+<p>Seeking is supported, although it’s slow on compressed files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.readall">
+<code class="descname">readall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.readall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all remaining data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.fileno">
+<code class="descname">fileno</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.fileno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns underlying file descriptor if one exists.</p>
+<p>An IOError is raised if the IO object does not use a file descriptor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush write buffers, if applicable.</p>
+<p>This is not implemented for read-only and non-blocking streams.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.isatty">
+<code class="descname">isatty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.isatty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether this is an ‘interactive’ stream.</p>
+<p>Return False if it can’t be determined.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rarfile.RarExtFile.next">
+<code class="descname">next</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.readline">
+<code class="descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read and return a line from the stream.</p>
+<p>If limit is specified, at most limit bytes will be read.</p>
+<p>The line terminator is always b’n’ for binary files; for text
+files, the newlines argument to open can be used to select the line
+terminator(s) recognized.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.readlines">
+<code class="descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.readlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of lines from the stream.</p>
+<p>hint can be specified to control the number of lines read: no more
+lines will be read if the total size (in bytes/characters) of all
+lines so far exceeds hint.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rarfile.RarExtFile.truncate">
+<code class="descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExtFile.truncate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Truncate file to size bytes.</p>
+<p>File pointer is left unchanged.  Size defaults to the current IO
+position as reported by tell().  Returns the new size.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id6">Functions</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rarfile.is_rarfile">
+<code class="descclassname">rarfile.</code><code class="descname">is_rarfile</code><span class="sig-paren">(</span><em>xfile</em><span class="sig-paren">)</span><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.is_rarfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check quickly whether file is rar archive.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-configuration">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id7">Module Configuration</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#module-configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="rarfile.UNRAR_TOOL">
+<code class="descclassname">rarfile.</code><code class="descname">UNRAR_TOOL</code><em class="property"> = 'unrar'</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.UNRAR_TOOL" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘unrar’, ‘rar’ or full path to either one</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.DEFAULT_CHARSET">
+<code class="descclassname">rarfile.</code><code class="descname">DEFAULT_CHARSET</code><em class="property"> = 'windows-1252'</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.DEFAULT_CHARSET" title="Permalink to this definition">¶</a></dt>
+<dd><p>default fallback charset</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.TRY_ENCODINGS">
+<code class="descclassname">rarfile.</code><code class="descname">TRY_ENCODINGS</code><em class="property"> = ('utf8', 'utf-16le')</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.TRY_ENCODINGS" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of encodings to try, with fallback to DEFAULT_CHARSET if none succeed</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.PATH_SEP">
+<code class="descclassname">rarfile.</code><code class="descname">PATH_SEP</code><em class="property"> = '/'</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.PATH_SEP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separator for path name components.  RAR internally uses ‘\’.
+Use ‘/’ to be similar with zipfile.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.USE_EXTRACT_HACK">
+<code class="descclassname">rarfile.</code><code class="descname">USE_EXTRACT_HACK</code><em class="property"> = 1</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.USE_EXTRACT_HACK" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether to speed up decompression by using tmp archive</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.HACK_SIZE_LIMIT">
+<code class="descclassname">rarfile.</code><code class="descname">HACK_SIZE_LIMIT</code><em class="property"> = 20971520</em><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.HACK_SIZE_LIMIT" title="Permalink to this definition">¶</a></dt>
+<dd><p>limit the filesize for tmp archive usage</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id8">Constants</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="rarfile.RAR_M0">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M0</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M0" title="Permalink to this definition">¶</a></dt>
+<dd><p>No compression.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_M1">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M1</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression level <cite>-m1</cite> - Fastest compression.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_M2">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M2</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression level <cite>-m2</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_M3">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M3</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression level <cite>-m3</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_M4">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M4</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression level <cite>-m4</cite>.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_M5">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_M5</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_M5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compression level <cite>-m5</cite> - Maximum compression.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_MSDOS">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_MSDOS</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_MSDOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_OS2">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_OS2</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_OS2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_WIN32">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_WIN32</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_WIN32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_UNIX">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_UNIX</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_UNIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_MACOS">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_MACOS</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_MACOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="rarfile.RAR_OS_BEOS">
+<code class="descclassname">rarfile.</code><code class="descname">RAR_OS_BEOS</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RAR_OS_BEOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="exceptions">
+<h2><a class="toc-backref" href="https://rarfile.readthedocs.io/en/latest/api.html#id9">Exceptions</a><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rarfile.Error">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">Error</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Base class for rarfile errors.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.BadRarFile">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">BadRarFile</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.BadRarFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>Incorrect data in archive.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.NotRarFile">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">NotRarFile</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.NotRarFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>The file is not RAR archive.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.BadRarName">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">BadRarName</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.BadRarName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>Cannot guess multipart name components.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.NoRarEntry">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">NoRarEntry</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.NoRarEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>File not found in RAR</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.PasswordRequired">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">PasswordRequired</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.PasswordRequired" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>File requires password</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.NeedFirstVolume">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">NeedFirstVolume</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.NeedFirstVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>Need to start from first volume.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.NoCrypto">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">NoCrypto</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.NoCrypto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>Cannot parse encrypted headers - no crypto available.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarExecError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarExecError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.Error" title="rarfile.Error"><code class="xref py py-class docutils literal"><span class="pre">rarfile.Error</span></code></a></p>
+<p>Problem reported by unrar/rar.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarWarning">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarWarning</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Non-fatal error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarFatalError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarFatalError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarFatalError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Fatal error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarCRCError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarCRCError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarCRCError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>CRC error during unpacking</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarLockedArchiveError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarLockedArchiveError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarLockedArchiveError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Must not modify locked archive</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarWriteError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarWriteError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarWriteError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Write error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarOpenError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarOpenError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarOpenError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Open error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarUserError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarUserError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarUserError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>User error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarMemoryError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarMemoryError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarMemoryError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Memory error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarCreateError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarCreateError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarCreateError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Create error</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarNoFilesError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarNoFilesError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarNoFilesError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>No files that match pattern were found</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarUserBreak">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarUserBreak</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarUserBreak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>User stop</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarWrongPassword">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarWrongPassword</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarWrongPassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Incorrect password</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarUnknownError">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarUnknownError</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarUnknownError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Unknown exit code</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarSignalExit">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarSignalExit</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarSignalExit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Unrar exited with signal</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rarfile.RarCannotExec">
+<em class="property">class </em><code class="descclassname">rarfile.</code><code class="descname">RarCannotExec</code><a class="headerlink" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarCannotExec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="https://rarfile.readthedocs.io/en/latest/api.html#rarfile.RarExecError" title="rarfile.RarExecError"><code class="xref py py-class docutils literal"><span class="pre">rarfile.RarExecError</span></code></a></p>
+<p>Executable not found.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://rarfile.readthedocs.io/en/latest/faq.html" class="btn btn-neutral float-right" title="rarfile FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://rarfile.readthedocs.io/en/latest/index.html" class="btn btn-neutral" title="rarfile - RAR archive reader for Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-65ugk3ut" class="ethical-rtd"></div></div>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2005-2016, Marko Kreen.
+      
+        <span class="commit">
+          Revision <code>af4d0e94</code>.
+        </span>
+      
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>版本</dt>
+        
+         <strong> 
+        <dd><a href="https://rarfile.readthedocs.io/en/latest/api.html">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>下载</dt>
+        
+        <dd><a href="https://readthedocs.org/projects/rarfile/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/rarfile/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/rarfile/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/rarfile/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/rarfile/builds/">构建</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/rarfile/downloads/">下载</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/markokr/rarfile/blob/master/doc/api.rst">View</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>搜索</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/rarfile/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/jquery-2.0.3.min.js"></script>
+      <script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/underscore.js"></script>
+      <script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/doctools.js"></script>
+      <script type="text/javascript" src="./rarfile API documentation — RarFile 3.0 documentation_files/readthedocs-doc-embed.js"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+
+<div id="rtd-nrqevqnl"></div></body></html>
