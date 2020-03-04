@@ -19,7 +19,7 @@ if __name__=='__main__':
     #Dictor(sys.argv[1],int(sys.argv[2]),int(sys.argv[3]))
     #print(len(sys.argv),sys.argv)
     help()
-    dic=open('password.txt','w')
+    dic=open('password_big.txt','w')
     CSet=sys.argv[1]
     minlen=int(sys.argv[2])
     maxlen=int(sys.argv[3])
