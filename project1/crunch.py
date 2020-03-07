@@ -1,6 +1,7 @@
 import random
 import itertools as its
 import sys
+
 def help():
     if len(sys.argv)==4 and isinstance(sys.argv[1],str) :
         #print("is ok")

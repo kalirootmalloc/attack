@@ -20,7 +20,7 @@ start =datetime.datetime.now()
 
 is_found=False
 ppp=open('aimpassword.txt','w')
-def extractFile(zname,passwords_arr):
+def extractFile(msfile,passwords_arr):
 
 	'''
 
@@ -37,7 +37,7 @@ def extractFile(zname,passwords_arr):
 	global is_found
 	global start
 	global ppp
-	msfile = msoffcrypto.OfficeFile(open(zname,"rb"))#实例化类
+	
 	bar = tqdm(passwords_arr)
 	index=0
 	for letter in bar:
@@ -120,7 +120,7 @@ def main():
 
 	print(zname,type(zname))
 
-	
+	msfile = msoffcrypto.OfficeFile(open(zname,"rb"))#实例化类
 
 	passFile = open(dname)#打开字典文件
 
@@ -150,12 +150,12 @@ def main():
 		while is_begin:
 			try:
 				#print('thread '+str(i)+'is start')
-				t = Thread(target=extractFile,args=(zname,arr))
+				t = Thread(target=extractFile,args=(msfile,arr))
 
 				t.start()
 				#t.join()
 				is_begin=False
-
+				time.sleep(0.1)
 			except:
 
 				is_begin=True

